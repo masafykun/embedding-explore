@@ -1,0 +1,18 @@
+.env
+.env.*
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+venv/
+
+# qiita-cli local state
+.qiita/
+
+# Qiita pulled articles from other projects (only keep the slug-named article)
+article/public/.remote/
+article/public/[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]*.md
+
+# Personal notes (not for public)
+CLAUDE.md
+BUILD_LOG.md
