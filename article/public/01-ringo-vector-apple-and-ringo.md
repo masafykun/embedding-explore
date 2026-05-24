@@ -7,17 +7,21 @@ tags:
   - OpenAI
   - embedding
 private: true
-updated_at: '2026-05-25T00:07:45+09:00'
+updated_at: '2026-05-25T00:19:19+09:00'
 id: 4473222f8e8fd472b5ee
 organization_url_name: null
 slide: false
 ignorePublish: false
 ---
 
+![PCA 散布図: 果物⇔Apple企業の意味勾配](https://raw.githubusercontent.com/masafykun/embedding-explore/main/data/pca_scatter.png)
+
 > 「『りんご』のベクトルってどんな値なんだろう？」という素朴な好奇心から始めて、最終的に embedding 空間に "果物軸" を見つけて新規単語を「果物っぽさスコア」でランキングするまでやってみた記録。
 
 OpenAI の `text-embedding-3-large` は 1単語を **3072次元** の数値ベクトルに変換する。
 この数字の塊が何を捉えているのか、curl と Python 標準ライブラリだけで実際に解剖してみた。
+
+上の散布図は本記事の実験結果を PCA で 2次元に落としたもの。横軸 PC1 が **「果物極 ⇔ Apple企業極」** の意味勾配になっていて、オレンジの `りんご → 林檎 → アップル` が表記の違いだけで両極の間をなめらかに移動していくのが見える。再現コード一式は [GitHub: masafykun/embedding-explore](https://github.com/masafykun/embedding-explore) に置いた。
 
 ## TL;DR
 
@@ -312,4 +316,4 @@ Apple Inc.       -0.010 ··
 - [OpenAI Embeddings ドキュメント](https://platform.openai.com/docs/guides/embeddings)
 - TCAV (Testing with Concept Activation Vectors) - Kim et al. 2018
 - Anthropic, "Toy Models of Superposition" - Elhage et al. 2022
-- 再現用コード: [GitHub の本記事リポジトリへのリンクは公開時に挿入]
+- 再現用コード: https://github.com/masafykun/embedding-explore
